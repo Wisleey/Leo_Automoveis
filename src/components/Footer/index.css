@@ -1,0 +1,35 @@
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-contact,
+  .footer-social {
+    margin: 10px;
+  }
+  
+  .footer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .footer-icon {
+    margin-right: 5px;
+  }
+  
+  .social-icon {
+    font-size: 20px;
+    margin: 0 5px;
+  }
+  
+  .footer-info {
+    margin-top: 20px;
+  }
