@@ -39,7 +39,7 @@ export function Header() {
     className="flex items-center bg-green-500 text-white px-3 py-2 rounded-md"
   >
     <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
-    Whatstest
+    Whastest
   </a>
 </nav>
 
