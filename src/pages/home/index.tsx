@@ -258,7 +258,7 @@ export function Home() {
       rel="noopener noreferrer"
       className={`whatsapp-button absolute left-10 transition-transform duration-1000 ${isVisible ? 'translate-x-0' : '-translate-x-full visible'}`}
     >
-      WhatsApp
+      Whatsteste
       <FontAwesomeIcon icon={faWhatsapp} className="ml-2" />
     </a>
     <h2 className={`texto absolute right-100 transition-transform duration-1000 ${isVisible ? 'translate-x-0' : 'translate-x-full visible'}`}>Fale com a gente</h2>
