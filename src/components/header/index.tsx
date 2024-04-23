@@ -33,7 +33,7 @@ export function Header() {
         className="flex items-center bg-green-500 text-white px-1 py-1 rounded-md"
       >
         <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
-        WhatsApp
+        Whatstest
       </a>
     </li>
   </ul>
