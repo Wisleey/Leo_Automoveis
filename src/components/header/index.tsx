@@ -24,10 +24,10 @@ export function Header() {
       <Link to="/" className="text-black">Início</Link>
     </li>
     <li>
-      <Link to="/car/car" className="text-black">Carros</Link>
+      <Link to="/car/car" className="text-black">Caranga</Link>
     </li>
     <li>
-      <Link to="/login" className="text-black">Login</Link>
+      <Link to="/login" className="text-black">Entrar</Link>
     </li>
     <li>
       <Link to="/" className="text-black" onClick={handleQueroVenderClick}>Quero vender!!</Link>
