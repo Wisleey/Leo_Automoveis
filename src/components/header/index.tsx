@@ -17,10 +17,8 @@ export function Header() {
           <Link to="/">
             <img src={logoImg} alt="Logo do site" />
           </Link>
-          <nav className="flex justify-between items-center px-4 py-2 bg-gray-100">
-  <Link to="/">
-    <img src={logoImg} alt="Logo do site" />
-  </Link>
+          <nav className="flex justify-between items-center px-1 py-1 ">
+  
   <ul className="flex items-center space-x-4">
     <li>
       <Link to="/" className="text-black">Início</Link>
