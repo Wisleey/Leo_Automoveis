@@ -250,7 +250,7 @@ export function New() {
                 register={register}
                 name="whatsapp"
                 error={errors.whatsapp?.message}
-                placeholder="Ex: 011999101923..."
+                placeholder="Ex: 64999101923..."
               />
             </div>
 
@@ -261,7 +261,7 @@ export function New() {
                 register={register}
                 name="city"
                 error={errors.city?.message}
-                placeholder="Ex: Campo Grande - MS..."
+                placeholder="Ex: Caldas novas - Goias..."
               />
             </div>
 
