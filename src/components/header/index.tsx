@@ -17,7 +17,10 @@ export function Header() {
           <Link to="/">
             <img src={logoImg} alt="Logo do site" />
           </Link>
-          <nav className="flex justify-between items-center flex-grow">
+          <nav className="flex justify-between items-center px-4 py-2 bg-gray-100">
+  <Link to="/">
+    <img src={logoImg} alt="Logo do site" />
+  </Link>
   <ul className="flex items-center space-x-4">
     <li>
       <Link to="/" className="text-black">Início</Link>
@@ -31,16 +34,18 @@ export function Header() {
     <li>
       <Link to="/" className="text-black" onClick={handleQueroVenderClick}>Quero vender!!</Link>
     </li>
+    <li>
+      <a
+        href="https://api.whatsapp.com/send?phone=5583991812589"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center bg-green-500 text-white px-1 py-1 rounded-md"
+      >
+        <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
+        WhatsApp
+      </a>
+    </li>
   </ul>
-  <a
-    href="https://api.whatsapp.com/send?phone=5583991812589"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center bg-green-500 text-white px-3 py-2 rounded-md"
-  >
-    <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
-    Whastest
-  </a>
 </nav>
 
 
