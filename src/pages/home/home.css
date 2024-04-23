@@ -1,0 +1,47 @@
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%; /* Reduzi a altura do gradiente pela metade */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.371) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+  
+  .whatsapp-button {
+    position: absolute;
+    left: 90px; /* Posicionamento um pouco para a direita */
+    top: 50%; /* Centralizando verticalmente */
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor:all-scroll;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Adicionada uma transição */
+    opacity: 1;
+    
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #128C7E;
+  }
+  
+  .texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    right: 15px; /* Ajustado para a posição direita */
+    top: 120%; /* Posicionamento no meio vertical */
+    margin-top: 10px; /* Ajuste para centralizar verticalmente */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Adicionada uma transição */
+    opacity: 0; /* Começa com opacidade 0 para torná-lo invisível */
+  }
+  
+  .visible .texto {
+    opacity: 1; /* Torna o texto visível */
+  }
+  .whatsapp-button.visible {
+    opacity: 1; /* Torna o botão visível */
+  }
+  

@@ -27,6 +27,9 @@ export function Header() {
                 <Link to="/car/car" className="text-black">Carros</Link>
               </li>
               <li>
+                <Link to="/login" className="text-black">Login</Link>
+              </li>
+              <li>
                 <Link to="/" className="text-black" onClick={handleQueroVenderClick}>Quero vender!!</Link>
               </li>
               <li>

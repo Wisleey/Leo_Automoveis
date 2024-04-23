@@ -3,6 +3,29 @@ import { Container } from "../../components/container";
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+// Seu código...
+
+<div className='bg-blue-500 h-64 px-100 rounded-lg text-white font-medium text-lg mt-4 relative'>
+  <div className="gradient">
+    <button>
+      <a
+        href="https://api.whatsapp.com/send?phone=5583991812589"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center bg-green-500 text-white px-3 py-2 rounded-md"
+      >
+        WhatsApp
+        <FontAwesomeIcon icon={faWhatsapp} className="ml-2" />
+      </a>
+    </button>
+  </div>
+</div>
+
+
+
 import {
   collection,
   query,
@@ -13,7 +36,7 @@ import {
 import { db } from '../../services/firebaseConnection';
 
 import logoImg from '../../assets/banner.png';
-
+import './home.css';
 interface CarsProps {
   id: string;
   name: string;
@@ -71,6 +94,30 @@ export function Home() {
   const [cars, setCars] = useState<CarsProps[]>([]);
   const [loadImages, setLoadImages] = useState<string[]>([]);
   const [input, setInput] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const component = document.getElementById('whatsapp-component');
+  
+      if (component) {
+        const componentOffsetTop = component.offsetTop;
+  
+        if (scrollTop > componentOffsetTop - windowHeight / 2) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     loadCars();
@@ -138,6 +185,7 @@ export function Home() {
 
     setCars(listcars);
   }
+  
 
   return (
     <Container>
@@ -197,12 +245,29 @@ export function Home() {
               <div className="px-2 pb-2">
                 <span className="text-black">{car.city}</span>
               </div>
+              <div></div>
             </section>
           </Link>
         ))}
       </main>
+      <div id="whatsapp-component" className={`relative bg-blue-500 h-64 px-100 rounded-lg text-white font-medium text-lg mt-4 overflow-hidden ${isVisible ? 'visible' : ''}`}>
+  <div className="gradient absolute top-0 left-0 right-0 bottom-50">
+    <a
+      href="https://api.whatsapp.com/send?phone=5583991812589"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`whatsapp-button absolute left-10 transition-transform duration-1000 ${isVisible ? 'translate-x-0' : '-translate-x-full visible'}`}
+    >
+      WhatsApp
+      <FontAwesomeIcon icon={faWhatsapp} className="ml-2" />
+    </a>
+    <h2 className={`texto absolute right-100 transition-transform duration-1000 ${isVisible ? 'translate-x-0' : 'translate-x-full visible'}`}>Fale com a gente</h2>
+  </div>
+</div>
 
+          
       <MyComponent />
     </Container>
+    
   );
 }
