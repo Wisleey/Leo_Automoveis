@@ -4,11 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export function Header() {
-  const handleQueroVenderClick = () => {
-    const mensagem = encodeURIComponent('Olá, queria colocar o meu carro à venda.');
-    const whatsappURL = `https://api.whatsapp.com/send?phone=5583991812589&text=${mensagem}`;
-    window.open(whatsappURL, '_blank');
-  };
 
   return (
     <div className="w-full flex items-center justify-center bg-blue-500 mb-4">
