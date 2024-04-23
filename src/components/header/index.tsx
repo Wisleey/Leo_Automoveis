@@ -29,9 +29,7 @@ export function Header() {
     <li>
       <Link to="/login" className="text-black">Entrar</Link>
     </li>
-    <li>
-      <Link to="/" className="text-black" onClick={handleQueroVenderClick}>Quero vender!!</Link>
-    </li>
+   
     <li>
       <a
         href="https://api.whatsapp.com/send?phone=5583991812589"
