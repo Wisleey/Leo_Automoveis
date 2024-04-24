@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import logoImg from '../../assets/logo.jpg'
+import logoImg from '../../assets/LOGO LEO PNG.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { Container } from '../../components/container'
 
