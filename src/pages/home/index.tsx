@@ -217,7 +217,7 @@ export function Home() {
           position: 'absolute',
           top: '10%',
           left: '9%',
-          color: 'orange',
+          color: 'red',
           zIndex: 1,
           fontSize: '3rem', // Ajusta o tamanho da fonte
           fontWeight: 'bold', // Torna a fonte mais grossa
