@@ -52,7 +52,7 @@
     #barraAzul h1 {
       font-size: 2rem; /* Reduzindo o tamanho da fonte */
       top: 5%; /* Ajustando a posição vertical */
-      left: 5%; /* Ajustando a posição horizontal */
+      left: 52%; /* Ajustando a posição horizontal */
     }
   
     /* Ajuste da descrição */
@@ -65,8 +65,8 @@
   
     /* Ajuste do ícone de localização */
     #barraAzul img[src*='localizacao'] {
-      width: 15px; /* Reduzindo o tamanho do ícone */
-      height: 15px; /* Reduzindo o tamanho do ícone */
+      width: 2px; /* Reduzindo o tamanho do ícone */
+      height: 3px; /* Reduzindo o tamanho do ícone */
       bottom: 30%; /* Ajustando a posição vertical */
       left: 5%; /* Ajustando a posição horizontal */
     }
@@ -96,9 +96,14 @@
     }
   
     /* Ajuste das imagens dos funcionários */
-    #barraAzul img[src*='FUNCIONARIO'] {
-      width: 70px; /* Reduzindo o tamanho da imagem */
-      top: 40px; /* Ajustando a posição vertical */
-      right: 10px; /* Ajustando a posição horizontal */
+    #barraAzul img[src*='FUNCIONARIO1'] {
+      width: 7px; /* Reduzindo o tamanho da imagem */
+      top: 4px; /* Ajustando a posição vertical */
+      right: 1px; /* Ajustando a posição horizontal */
+    }
+    #barraAzul img[src*='FUNCIONARIO2'] {
+      width: 7px; /* Reduzindo o tamanho da imagem */
+      top: 4px; /* Ajustando a posição vertical */
+      right: 3px; /* Ajustando a posição horizontal */
     }
   }
