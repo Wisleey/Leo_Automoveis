@@ -45,65 +45,9 @@
     opacity: 1; /* Torna o botão visível */
   }
   
-  @media screen and (max-width: 768px) {
-    /* Estilo para dispositivos móveis */
-  
-    /* Ajuste do título "Nossa equipe" */
-    #barraAzul h1 {
-      font-size: 2rem; /* Reduzindo o tamanho da fonte */
-      top: 5%; /* Ajustando a posição vertical */
-      left: 52%; /* Ajustando a posição horizontal */
-    }
-  
-    /* Ajuste da descrição */
-    #barraAzul h4 {
-      font-size: 1rem; /* Reduzindo o tamanho da fonte */
-      top: 20%; /* Ajustando a posição vertical */
-      left: 50%; /* Ajustando a posição horizontal */
-      transform: translateX(-50%); /* Centralizando horizontalmente */
-    }
-  
-    /* Ajuste do ícone de localização */
-    #barraAzul img[src*='localizacao'] {
-      width: 2px; /* Reduzindo o tamanho do ícone */
-      height: 3px; /* Reduzindo o tamanho do ícone */
-      bottom: 30%; /* Ajustando a posição vertical */
-      left: 5%; /* Ajustando a posição horizontal */
-    }
-  
-    /* Ajuste do endereço */
-    #barraAzul p {
-      font-size: 0.8rem; /* Reduzindo o tamanho da fonte */
-      bottom: 28%; /* Ajustando a posição vertical */
-      left: 50%; /* Ajustando a posição horizontal */
-      transform: translateX(-50%); /* Centralizando horizontalmente */
-    }
-  
-    /* Ajuste do ícone de e-mail */
-    #barraAzul img[src*='email'] {
-      width: 15px; /* Reduzindo o tamanho do ícone */
-      height: 12px; /* Reduzindo o tamanho do ícone */
-      bottom: 20%; /* Ajustando a posição vertical */
-      left: 5%; /* Ajustando a posição horizontal */
-    }
-  
-    /* Ajuste do e-mail */
-    #barraAzul p:nth-of-type(2) {
-      font-size: 0.8rem; /* Reduzindo o tamanho da fonte */
-      bottom: 19%; /* Ajustando a posição vertical */
-      left: 50%; /* Ajustando a posição horizontal */
-      transform: translateX(-50%); /* Centralizando horizontalmente */
-    }
-  
-    /* Ajuste das imagens dos funcionários */
-    #barraAzul img[src*='FUNCIONARIO1'] {
-      width: 7px; /* Reduzindo o tamanho da imagem */
-      top: 4px; /* Ajustando a posição vertical */
-      right: 1px; /* Ajustando a posição horizontal */
-    }
-    #barraAzul img[src*='FUNCIONARIO2'] {
-      width: 7px; /* Reduzindo o tamanho da imagem */
-      top: 4px; /* Ajustando a posição vertical */
-      right: 3px; /* Ajustando a posição horizontal */
-    }
+  .blue-full {
+    width: 100%;
+    background-color: blue;
   }
+
+    

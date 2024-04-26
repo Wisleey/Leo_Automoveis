@@ -12,13 +12,15 @@ import {
   where
 } from 'firebase/firestore';
 import { db } from '../../services/firebaseConnection';
-import barraAzul from '../../assets/barraAzul.png';
 import FUNCIONARIO1 from '../../assets/FUNCIONARIO1.png';
 import FUNCIONARIO2 from '../../assets/FUNCIONARIO2.png';
 import email from '../../assets/email.png';
 import localizacao from '../../assets/localizacao.png';
 import logoImg from '../../assets/banner.png';
 import './home.css';
+import barraAzul from '../../assets/barraAzul.png'
+
+
 
 interface CarsProps {
   id: string;
@@ -37,42 +39,6 @@ interface CarImageProps {
   url: string;
 }
 
-const MyComponent = () => {
-  useEffect(() => {
-    const address = '793G+7X Jardim Roma, Caldas Novas - GO';
-    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-      address
-    )}&key=AIzaSyBnHXyV9AqBQ8kspgEKprx4eUhFiAqqO24`;
-
-    fetch(geocodeUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        const location = data.results[0].geometry.location;
-        const latitude = location.lat;
-        const longitude = location.lng;
-        const zoom = 15;
-
-        const map = L.map('map').setView([latitude, longitude], zoom);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution:
-            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        const marker = L.marker([latitude, longitude]).addTo(map);
-        marker.bindPopup('Localização desejada').openPopup();
-      });
-  }, []);
-
-  return <div
-    id="map"
-    style={{
-      width: '100%',
-      height: '400px',
-      marginTop: '20px',
-      marginBottom: '20px'
-    }}
-  ></div>;
-};
-
 export function Home() {
   const [cars, setCars] = useState<CarsProps[]>([]);
   const [loadImages, setLoadImages] = useState<string[]>([]);
@@ -80,6 +46,7 @@ export function Home() {
 
   useEffect(() => {
     loadCars();
+    renderMap();
   }, []);
 
   function loadCars() {
@@ -144,7 +111,31 @@ export function Home() {
 
     setCars(listcars);
   }
-  
+
+  function renderMap() {
+    const address = '793G+7X Jardim Roma, Caldas Novas - GO';
+    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+      address
+    )}&key=AIzaSyBnHXyV9AqBQ8kspgEKprx4eUhFiAqqO24`;
+
+    fetch(geocodeUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        const location = data.results[0].geometry.location;
+        const latitude = location.lat;
+        const longitude = location.lng;
+        const zoom = 15;
+
+        const map = L.map('Mapa').setView([latitude, longitude], zoom);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        const marker = L.marker([latitude, longitude]).addTo(map);
+        marker.bindPopup('Localização desejada').openPopup();
+      });
+  }
+
   return (
     <Container>
       <img src={logoImg} alt="Logo do site" className="w-full mt-6" />
@@ -169,6 +160,13 @@ export function Home() {
       </section>
 
       <div className="mt-8">
+  <div style={{ textAlign: 'center', marginLeft: '10px' }}> {/* Adicionando estilos inline para posicionar o h1 */}
+    <h1 style={{ color: '#F2442E', fontSize: '3rem' }}>Nossos Veiculos</h1> {/* Adicionando estilos inline para posicionar o h1 */}
+    <h2 style={{ textAlign: 'center', marginLeft: '0px',
+      fontSize: '1.5rem'
+     }}>As melhores ofertas para você adquirir seu carro novo!</h2> {/* Adicionando estilos inline para posicionar o h2 */}
+  </div>
+  <div className="mt-7"></div>
         <main className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cars.map((car) => (
             <Link key={car.id} to={`/car/${car.id}`}>
@@ -298,8 +296,19 @@ export function Home() {
         {/* Imagem "barraAzul.png" */}
         <img src={barraAzul} alt="barra azul" className="w-full mt-6" />
       </div>
-      
-      <MyComponent />
+
+      <div id="Mapa" style={{ width: '100%', height: '400px', marginTop: '20px', marginBottom: '20px' }}></div>
+
+      <div style={{ backgroundColor: '#F2442E', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+  <div style={{ textAlign: 'left', marginLeft: '50px' }}>
+    <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px' }}>Financiamento facilitado</h1>
+    <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '10px' }}>Faça uma simulação de financiamento sem compromisso</h3>
+  </div>
+  <a href="https://api.whatsapp.com/send?phone=5583991812589" target="_blank" rel="noopener noreferrer">
+    <button style={{ backgroundColor: 'green', color: 'white', padding: '8px 80px', border: 'none', borderRadius: '10px', cursor: 'pointer' }}>WhatsApp</button>
+  </a>
+</div>
+
     </Container>
   );
 }
