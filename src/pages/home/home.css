@@ -1,53 +1,106 @@
 .gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 50%; /* Reduzi a altura do gradiente pela metade */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.371) 0%, rgba(255, 255, 255, 0) 100%);
-  }
-  
-  .whatsapp-button {
-    position: absolute;
-    left: 90px; /* Posicionamento um pouco para a direita */
-    top: 50%; /* Centralizando verticalmente */
-    padding: 10px 20px;
-    background-color: #25D366;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor:all-scroll;
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Adicionada uma transição */
-    opacity: 1;
-    
-  }
-  
-  .whatsapp-button:hover {
-    background-color: #128C7E;
-  }
-  
-  .texto {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-    right: 15px; /* Ajustado para a posição direita */
-    top: 120%; /* Posicionamento no meio vertical */
-    margin-top: 10px; /* Ajuste para centralizar verticalmente */
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Adicionada uma transição */
-    opacity: 0; /* Começa com opacidade 0 para torná-lo invisível */
-  }
-  
-  .visible .texto {
-    opacity: 1; /* Torna o texto visível */
-  }
-  .whatsapp-button.visible {
-    opacity: 1; /* Torna o botão visível */
-  }
-  
-  .blue-full {
-    width: 100%;
-    background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50%; /* Reduzi a altura do gradiente pela metade */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.371) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.whatsapp-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E;
+}
+
+.texto {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60%;
+  display: none; /* Começa escondido */
+  color: white;
+}
+
+@media (max-width: 375px) and (max-height: 812px) {
+ 
+}
+
+@media (max-width: 375px) and (max-height: 667px) {
+ 
   }
 
-    
+
+@media (max-width: 393px) and (max-height: 786px) {
+ 
+}
+
+.visible .texto {
+ 
+
+  opacity: 1; /* Torna o texto visível */
+}
+
+.whatsapp-button.visible {
+  opacity: 1; /* Torna o botão visível */
+}
+
+.blue-full {
+  width: 100%;
+  background-color: blue;
+}
+@media (max-width: 414px) {
+  /* Estilos para iPhone XR, XS Max */
+  /* Ajustar o layout para uma imagem em cima da outra */
+  div > a:nth-child(2) {
+    display: none;
+  }
+  div > div {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  /* Estilos para iPhone 8, 7, 6S, 6 e iPhone XS, X */
+  /* Ajustar o layout para uma imagem em cima da outra */
+  div > a:nth-child(2) {
+    display: none;
+  }
+  div > div {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Estilos para Galaxy S9, Note 8, S8 */
+  /* Ajustar o layout para uma imagem em cima da outra */
+  div > a:nth-child(2) {
+    display: none;
+  }
+  div > div {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 393px) {
+  /* Estilos para Pixel 3, 3 XL */
+  /* Ajustar o layout para uma imagem em cima da outra */
+  div > a:nth-child(2) {
+    display: none;
+  }
+  div > div {
+    padding: 0 !important;
+  }
+}
