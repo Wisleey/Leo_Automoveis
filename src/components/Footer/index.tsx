@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         
       </div>
       <div id="footer_copyright">
-        &#169; 2023 all rights reserved
+        &#169 ; Dev WisleyRodrigues 2024 Todos Direitos Resorvados
       </div>
     </footer>
   );
