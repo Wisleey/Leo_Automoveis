@@ -1,53 +1,66 @@
-
-import { FaFacebook, FaInstagram, FaSpotify, FaTwitter } from 'react-icons/fa'
+import React from 'react';
+import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
 import logo from '../../assets/LOGO LEO PNG.png'
 import './index.css'
+import funcionario1 from '../../assets/FUNCIONARIO1.png'
+import funcionario2 from '../../assets/FUNCIONARIO2.png'
+const whatsappNumber = '5583991812589'; // Número do WhatsApp
+
+const Footer: React.FC = () => {
+  return (
+    <footer>
+      <div id="footer_content" className="footer-content">
+      
 
 
-function Footer() {
-    return (
-
-        <div className='main-footer'>
-            <div className='container'>
-              
-                <div className='row text-center'>
-                  <div className='logo'>
-              <img src={logo}></img>
-            </div>
-                    {/* Column 1 */}
-                    <div className='col-md-3 col-sm-6'>
-                        <h4>Início</h4>
-                        <ul className='list-unstyled'>
-                            <li>Home</li>
-                            <li>Promoções</li>
-                            <li>Destinos</li>
-                            <li>Contato</li>
-                        </ul>
-                    </div>
-                    
-                   
-            </div>
-            </div>
-            
-            <div className='container'>
-                <div className='social-items'>
-                    <ul className='list-social-icon'>
-                        <li className='list-icon'><FaFacebook /><a href='https://www.facebook.com/'></a></li>
-                        <li className='list-icon'><FaInstagram /></li>
-                        <li className='list-icon'><FaTwitter /></li>
-                        <li className='list-icon'><FaSpotify /></li>
-                    </ul>
-                </div>
-
-                <div className='d-flex justify-content-center w-100'>
-  <p className='text-center'>
-    &copy;{new Date().getFullYear()} Wisley Rodrigues - Todos os Direitos Reservados
-  </p>
+      <div className="image-container">
+  <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}>
+    <img src={funcionario1} alt="Funcionário 1"/>
+  </a>
+</div>
+<div className="image-container">
+  <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}>
+    <img src={funcionario2} alt="Funcionário 2"/>
+  </a>
+</div><div id="footer_logo" className="footer-section">
+  <img src={logo} alt="Logo" />
+</div>
+<div id="footer_links" className="footer-section">
+  <ul className="footer-list">
+    <li>
+      <h3>Compar</h3>
+    </li>
+    <li>
+      <a href="#" className="footer-link">Vender</a>
+    </li>
+    <li>
+      <a href="#" className="footer-link">Contato</a>
+    </li>
+    <li>
+      <a href="#" className="footer-link">Peça Orçamento</a>
+    </li>
+  </ul>
+</div>
+<div id="footer_social_media" className="footer-section">
+  <a href="#" className="footer-link" id="instagram">
+    <FaInstagram />
+  </a>
+  <a href="#" className="footer-link" id="facebook">
+    <FaFacebookF />
+  </a>
+  <a href="#" className="footer-link" id="whatsapp">
+    <FaWhatsapp />
+  </a>
 </div>
 
-            </div>
-        </div>
-    )
+
+        
+      </div>
+      <div id="footer_copyright">
+        &#169; 2023 all rights reserved
+      </div>
+    </footer>
+  );
 }
-  
+
 export default Footer;

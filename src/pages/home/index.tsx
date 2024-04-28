@@ -12,13 +12,9 @@ import {
   where
 } from 'firebase/firestore';
 import { db } from '../../services/firebaseConnection';
-import FUNCIONARIO1 from '../../assets/FUNCIONARIO1.png';
-import FUNCIONARIO2 from '../../assets/FUNCIONARIO2.png';
-import email from '../../assets/email.png';
-import localizacao from '../../assets/localizacao.png';
+
 import logoImg from '../../assets/banner.png';
 import './home.css';
-import barraAzul from '../../assets/barraAzul.png'
 
 
 
@@ -209,99 +205,11 @@ export function Home() {
           ))}
         </main>
       </div>
-      <div style={{ position: 'relative', marginTop: '40px' }}>
-  {/* Título "Nossa equipe" */}
-  <h1 style={{ 
-    position: 'absolute',
-    top: '10%',
-    left: '9%',
-    color: '#F2442E',
-    zIndex: 1,
-    fontSize: '3rem', // Ajusta o tamanho da fonte
-    fontWeight: 'bold', // Torna a fonte mais grossa
-  }}>Nossa equipe</h1>
+      
+      
 
-  {/* Descrição */}
-  <h4 style={{ 
-    position: 'absolute',
-    top: '30%', 
-    left: '20%', 
-    transform: 'translateX(-50%)', 
-    color: 'white', 
-    zIndex: 1, 
-    textAlign: 'center' 
-  }}> 
-    Tire todas as suas dúvidas<br /> 
-    através do nosso atendimento online direto<br /> 
-    pelo WhatsApp.
-  </h4>
-
-  {/* Ícone de localização */}
-  <img 
-    src={localizacao} 
-    alt="Localização" 
-    style={{ 
-      position: 'absolute', 
-      bottom: '30%', 
-      left: '10%',  
-      width: '20px', // Defina a largura desejada
-      height: '20px' // Defina a altura desejada
-    }} 
-  />
-
-  {/* Endereço */}
-  <p style={{ 
-    position: 'absolute',
-    bottom: '30%',
-    left: '13%', 
-    color: 'white', 
-    zIndex: 1,
-    textAlign: 'center'
-  }}>
-    R. 5 - Jardim Roma, Caldas Novas - GO. 75690-000
-  </p>
-
-  {/* Ícone de e-mail */}
-  <img 
-    src={email}
-    alt="E-mail" 
-    style={{ 
-      position: 'absolute',
-      bottom: '20%',
-      left: '10%',
-      width: '20px', // Defina a largura desejada
-      height: '15px' // Defina a altura desejada
-    }} 
-  />
-
-  {/* E-mail */}
-  <p style={{ 
-    position: 'absolute',
-    bottom: '19%',
-    left: '13%',
-    color: 'white',
-    textAlign: 'center'
-  }}>
-    leoauto01@gmail.com
-  </p>
-
-  {/* Outras imagens */}
-  <a href="https://api.whatsapp.com/send?phone=5564993147007" target="_blank" rel="noopener noreferrer">
-    <img src={FUNCIONARIO1} alt="João" style={{ position: 'absolute', top: '50px', right: '30px', zIndex: 1 }} />
-  </a>
-  <a href="https://api.whatsapp.com/send?phone=5564992014770" target="_blank" rel="noopener noreferrer">
-    <img src={FUNCIONARIO2} alt="Neguinho" style={{ position: 'absolute', top: '50px', right: '270px', zIndex: 1 }} />
-  </a>
-
-  {/* Imagem "barraAzul.png" */}
-  <img src={barraAzul} alt="barra azul" className="w-full mt-6" />
-</div>
-
-<div id="Mapa" style={{ width: '100%', height: '400px', marginTop: '20px', marginBottom: '20px' }}></div>
-
-
-<div style={{ backgroundColor: '#F2442E', padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-  <div style={{ maxWidth: '600px', padding: '0 20px' }}>
+      <div style={{ backgroundColor: '#F2442E', padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',  overflowX: 'hidden' }}>
+  <div style={{  padding: '0 20px' }}>
     <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px' }}>Financiamento facilitado</h1>
     <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '10px' }}>Faça uma simulação de financiamento sem compromisso</h3>
   </div>

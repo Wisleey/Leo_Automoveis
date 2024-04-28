@@ -1,143 +1,140 @@
-.footer {
-  display: flex;
-  justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  --color-neutral-0: #1b138b;
+  --color-neutral-10: #14289b;
+  --color-neutral-30: #ff6600;
+  --color-neutral-40: #f5f5f5;
 }
 
-.main-footer {
-  background-color: rgb(36, 50, 143);
-  padding: 1px;
-  color: rgb(255, 255, 255);
+/* CONFIG BODY */
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
 }
 
+/* CONFIG FOOTER */
+footer {
+  width: 100%;
+  color: var(--color-neutral-40);
+}
 
-
-.list-social-icon {
-  list-style: none;
+#footer_content {
+  background-color: var(--color-neutral-10);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 3rem 3.5rem;
 }
 
-.list-icon {
-  margin: 0 1rem;
+#footer_social_media {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
 }
 
-.list-icon svg {
-  font-size: 2.3rem;
-  cursor: pointer;
-  color: #F22E52;
+#footer_social_media .footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: var(--color-neutral-40);
+  border-radius: 50%;
+  transition: all 0.4s;
 }
 
-.social-items {
-  padding: 10px;
+#footer_social_media .footer-link i {
+  font-size: 1.25rem;
 }
-.logo {
-  margin-top: 50px;
-  margin-left: 50px; /* Para alinhar a logo à esquerda */
-  display: flex;/* Para garantir que a margem funcione corretamente */
-  width: 120px;
-  margin-bottom: 20px; /* Ajuste conforme necessário */
+
+#footer_social_media .footer-link:hover {
+  opacity: 0.8;
 }
-@media (max-width: 896px) {
-  .main-footer {
-    padding: 20px;
+
+#instagram {
+  background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+  background-color: #4267b3;
+}
+
+#whatsapp {
+  background-color: #25d366;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.footer-list .footer-link {
+  color: var(--color-neutral-30);
+  transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+  color: #7f37c9;
+}
+
+.footer-section {
+  text-align: center;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section .footer-link {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#footer_copyright {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-neutral-0);
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  font-weight: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    text-align: center;
   }
 
-  .logo {
+  #footer_content {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .image-container {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #footer_logo img {
     display: block;
-    width: 120px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
   }
 
-  .list-social-icon {
-    justify-content: center;
-  }
-
-  .list-icon {
-    margin: 0 0.5rem;
-  }
-
-  .social-items {
-    padding: 5px;
-  }
-}
-
-@media (max-width: 812px) {
-  .main-footer {
-    padding: 20px;
-  }
-
-  .logo {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 120px;
-    margin-bottom: 20px;
-  }
-
-  .list-social-icon {
-    justify-content: center;
-  }
-
-  .list-icon {
-    margin: 0 0.5rem;
-  }
-
-  .social-items {
-    padding: 5px;
-  }
-}
-
-@media (max-width: 667px) {
-  .main-footer {
-    padding: 20px;
-  }
-
-  .logo {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 120px;
-    margin-bottom: 20px;
-  }
-
-  .list-social-icon {
-    justify-content: center;
-  }
-
-  .list-icon {
-    margin: 0 0.5rem;
-  }
-
-  .social-items {
-    padding: 5px;
-  }
-}
-
-@media (max-width: 786px) {
-  .main-footer {
-    padding: 20px;
-  }
-
-  .logo {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 120px;
-    margin-bottom: 20px;
-  }
-
-  .list-social-icon {
-    justify-content: center;
-  }
-
-  .list-icon {
-    margin: 0 0.5rem;
-  }
-
-  .social-items {
-    padding: 5px;
+  #footer_links,
+  #footer_social_media {
+    margin-top: 20px;
   }
 }
