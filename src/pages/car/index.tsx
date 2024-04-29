@@ -154,7 +154,7 @@ export function CarDetail() {
         <a
           href={`https://api.whatsapp.com/send?phone=${car?.whatsapp}&text=Olá vi esse ${car?.name} no site Leo Automoveis e fique interessado!`}
           target="_blank"  
-          className="cursor-pointer bg-green-500 w-full text-white flex items-center justify-center gap-2 my-6 h-11 text-xl rounded-lg font-medium"
+          className="cursor-pointer bg-green-600 w-full text-white flex items-center justify-center gap-3 my-8 h-14 text-xl rounded-lg font-medium"
         >
           Conversar com vendedor
           <FaWhatsapp size={26} color="#FFF" />

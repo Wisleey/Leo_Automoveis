@@ -147,19 +147,22 @@ export function Home() {
       </h1>
       <h2 className=" text-center text-2xl "style={{  fontFamily: 'Exo2' }}>faça uma pesquisa completa </h2>
       <br></br>
-      <section className="bg-white p-4 rounded-lg w-full max-w-3xl mx-auto flex justify-center items-center gap-2">
-        <input
-          className="w-full border-2 rounded-lg h-9 px-3 outline-none"
-          placeholder="Digite o nome do carro..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button type="button" style={{  fontFamily: 'Exo2' }} className=" text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-          onClick={handleSearchCar}
-        >
-          Buscar
-        </button>
-      </section>
+      <section className="section-container">
+  <input
+    className="input-field"
+    placeholder="Digite o nome do carro..."
+    value={input}
+    onChange={(e) => setInput(e.target.value)}
+  />
+  <button
+    type="button"
+    className="search-button"
+    onClick={handleSearchCar}
+  >
+    Buscar
+  </button>
+</section>
+
 
       <div className="mt-8">
   <div style={{ textAlign: 'center', marginLeft: '10px' }}> {/* Adicionando estilos inline para posicionar o h1 */}
