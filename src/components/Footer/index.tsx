@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
         
       </div>
       <div id="footer_copyright">
-         Dev WisleyRodrigues 2024 Todos Direitos Resorvados
+         Dev WisleyRodrigues 2024 Todos Direitos Reservados
       </div>
     </footer>
   );

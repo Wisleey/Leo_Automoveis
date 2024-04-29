@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
 
+
 import {
   collection,
   query,
@@ -15,7 +16,6 @@ import { db } from '../../services/firebaseConnection';
 
 import logoImg from '../../assets/banner.png';
 import './home.css';
-
 
 
 interface CarsProps {
@@ -128,18 +128,24 @@ export function Home() {
             'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
         }).addTo(map);
         const marker = L.marker([latitude, longitude]).addTo(map);
-        marker.bindPopup('Localização desejada').openPopup();
+        marker.bindPopup('Leo Automoveis').openPopup();
+
+        marker.on('click', function () {
+          const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+          window.open(googleMapsUrl, '_blank');
+        });
       });
   }
 
   return (
     <Container>
-      <img src={logoImg} alt="Logo do site" className="w-full mt-6" />
+      <img src={logoImg} alt="Logo do site" className="w-full mt-6 mx-auto -mx-4" />
+
       
-      <h1 className="font-bold text-center mt-6 text-3xl mb-4" style={{ color: '#F2442E' }}>
-    Encontre seu veículo 
-  </h1>
-      <h2 className=" text-center text-2xl">faça uma pesquisa completa </h2>
+       <h1 className="font-bold text-center mt-6 text-3xl mb-4" style={{ color: '#F2442E', fontFamily: 'Exo2' }}>
+        Encontre seu veículo 
+      </h1>
+      <h2 className=" text-center text-2xl "style={{  fontFamily: 'Exo2' }}>faça uma pesquisa completa </h2>
       <br></br>
       <section className="bg-white p-4 rounded-lg w-full max-w-3xl mx-auto flex justify-center items-center gap-2">
         <input
@@ -148,8 +154,7 @@ export function Home() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button
-          className="bg-blue-500 h-9 px-8 rounded-lg text-white font-medium text-lg"
+        <button type="button" style={{  fontFamily: 'Exo2' }} className=" text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
           onClick={handleSearchCar}
         >
           Buscar
@@ -158,53 +163,53 @@ export function Home() {
 
       <div className="mt-8">
   <div style={{ textAlign: 'center', marginLeft: '10px' }}> {/* Adicionando estilos inline para posicionar o h1 */}
-    <h1 style={{ color: '#F2442E', fontSize: '3rem' }}>Nossos Veiculos</h1> {/* Adicionando estilos inline para posicionar o h1 */}
-    <h2 style={{ textAlign: 'center', marginLeft: '0px',
+    <h1 style={{ color: '#F2442E',fontSize: '3rem',  fontFamily: 'Exo2' }}>Nossos Veiculos</h1> {/* Adicionando estilos inline para posicionar o h1 */}
+    <h2 style={{ textAlign: 'center', marginLeft: '0px', fontFamily: 'Exo2',
       fontSize: '1.5rem'
      }}>As melhores ofertas para você adquirir seu carro novo!</h2> {/* Adicionando estilos inline para posicionar o h2 */}
-  </div>
-  <div className="mt-7"></div>
-        <main className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {cars.map((car) => (
-            <Link key={car.id} to={`/car/${car.id}`}>
-              <section className="w-full bg-white rounded-lg">
-                <div
-                  className="w-full h-72 rounded-lg bg-slate-200"
-                  style={{
-                    display: loadImages.includes(car.id) ? 'none' : 'block'
-                  }}
-                ></div>
-                <img
-                  className="w-full rounded-lg mb-2 max-h-72 hover:scale-105 transition-all"
-                  src={car.images[0].url}
-                  alt="Carro"
-                  onLoad={() => handleImageLoad(car.id)}
-                  style={{
-                    display: loadImages.includes(car.id) ? 'block' : 'none'
-                  }}
-                />
-                <p className="font-bold mt-1 mb-2 px-2">{car.name}</p>
+  </div><div className="mt-7"></div>
+<main className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {cars.map((car) => (
+    <Link key={car.id} to={`/car/${car.id}`}>
+      <section className="w-full bg-white rounded-lg">
+        <div
+          className="w-full h-48 md:h-72 rounded-lg bg-slate-200"
+          style={{
+            display: loadImages.includes(car.id) ? 'none' : 'block'
+          }}
+        ></div>
+        <img
+          className="w-full rounded-lg mb-2 max-h-48 md:max-h-72 hover:scale-105 transition-all"
+          src={car.images[0].url}
+          alt="Carro"
+          onLoad={() => handleImageLoad(car.id)}
+          style={{
+            display: loadImages.includes(car.id) ? 'block' : 'none'
+          }}
+        />
+        <p className="font-bold mt-1 mb-2 px-2">{car.name}</p>
 
-                <div className="flex flex-col px-2">
-                  <span className="text-zinc-700 mb-6">
-                    Ano {car.year} | {car.km} km
-                  </span>
-                  <strong className="text-black font-medium text-xl">
-                    R$ {car.price}
-                  </strong>
-                </div>
+        <div className="flex flex-col px-2">
+          <span className="text-zinc-700 mb-6">
+            Ano {car.year} | {car.km} km
+          </span>
+          <strong className="text-black font-medium text-xl">
+            R$ {car.price}
+          </strong>
+        </div>
 
-                <div className="w-full h-px bg-slate-200 my-2"></div>
+        <div className="w-full h-px bg-slate-200 my-2"></div>
 
-                <div className="px-2 pb-2">
-                  <span className="text-black">{car.city}</span>
-                </div>
-                <div></div>
-              </section>
-            </Link>
-          ))}
-        </main>
-      </div>
+        <div className="px-2 pb-2">
+          <span className="text-black">{car.city}</span>
+        </div>
+        <div></div>
+      </section>
+    </Link>
+  ))}
+</main>
+</div>
+      <div id="Mapa" style={{ width: '100%', height: '400px', marginTop: '20px', marginBottom: '20px' }}></div>
       
       
 
