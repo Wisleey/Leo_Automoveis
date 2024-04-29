@@ -4,7 +4,8 @@ import logo from '../../assets/LOGO LEO PNG.png'
 import './index.css'
 import funcionario1 from '../../assets/FUNCIONARIO1.png'
 import funcionario2 from '../../assets/FUNCIONARIO2.png'
-const whatsappNumber = '5583991812589'; // Número do WhatsApp
+const whatsappNumber = '5564992014770'; 
+const whatsappNumber2 = '5564993147007'
 
 const Footer: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const Footer: React.FC = () => {
 
 
       <div className="image-container">
-  <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}>
+  <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber2}`}>
     <img src={funcionario1} alt="Funcionário 1"/>
   </a>
 </div>
@@ -31,24 +32,25 @@ const Footer: React.FC = () => {
       <h3>Compar</h3>
     </li>
     <li>
-      <a href="#" className="footer-link">Vender</a>
+  <a  href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`} className="footer-link">Vender via WhatsApp</a>
+</li>
+
+    <li>
+      <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber2}`} className="footer-link">Contato</a>
     </li>
     <li>
-      <a href="#" className="footer-link">Contato</a>
-    </li>
-    <li>
-      <a href="#" className="footer-link">Peça Orçamento</a>
+      <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`} className="footer-link">Peça Orçamento</a>
     </li>
   </ul>
 </div>
 <div id="footer_social_media" className="footer-section">
-  <a href="#" className="footer-link" id="instagram">
+  <a href="https://www.instagram.com/leoautomoveiscn/?hl=en" className="footer-link" id="instagram">
     <FaInstagram />
   </a>
-  <a href="#" className="footer-link" id="facebook">
+  <a href="https://web.facebook.com/CALZADA.VEICULOS.LTDA" className="footer-link" id="facebook">
     <FaFacebookF />
   </a>
-  <a href="#" className="footer-link" id="whatsapp">
+  <a href= {`https://api.whatsapp.com/send?phone=${whatsappNumber}`} className="footer-link" id="whatsapp">
     <FaWhatsapp />
   </a>
 </div>
@@ -57,7 +59,7 @@ const Footer: React.FC = () => {
         
       </div>
       <div id="footer_copyright">
-        &#169 ; Dev WisleyRodrigues 2024 Todos Direitos Resorvados
+         Dev WisleyRodrigues 2024 Todos Direitos Resorvados
       </div>
     </footer>
   );
