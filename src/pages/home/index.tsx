@@ -138,8 +138,11 @@ export function Home() {
   }
 
   return (
+    <>
+    <img src={logoImg} alt="Logo do site" className="w-full mt-6 mx-auto -mx-4" />
+
     <Container>
-      <img src={logoImg} alt="Logo do site" className="w-full mt-6 mx-auto -mx-4" />
+      
 
       
        <h1 className="font-bold text-center mt-6 text-3xl mb-4" style={{ color: '#F2442E', fontFamily: 'Exo2' }}>
@@ -212,23 +215,29 @@ export function Home() {
   ))}
 </main>
 </div>
-      <div id="Mapa" style={{ width: '100%', height: '400px', marginTop: '20px', marginBottom: '20px' }}></div>
-      
-      
+     
 
-      <div style={{ backgroundColor: '#F2442E', padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center',  overflowX: 'hidden' }}>
-  <div style={{  padding: '0 20px' }}>
+
+
+    </Container>
+    <div id="Mapa" style={{ width: '100%', height: '400px', marginTop: '20px', marginBottom: '20px' }}></div>
+    <div style={{ backgroundColor: '#F2442E', width: '99vw', padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'flex-start' }}>
+ 
     <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px' }}>Financiamento facilitado</h1>
     <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '10px' }}>Faça uma simulação de financiamento sem compromisso</h3>
-  </div>
+  
   <div>
     <a href="https://api.whatsapp.com/send?phone=5583991812589" target="_blank" rel="noopener noreferrer">
       <button style={{ backgroundColor: 'green', color: 'white', padding: '8px 20px', border: 'none', borderRadius: '10px', cursor: 'pointer' }}>WhatsApp</button>
     </a>
   </div>
 </div>
+   
 
+    
+ 
 
-    </Container>
+    </>
+    
   );
 }

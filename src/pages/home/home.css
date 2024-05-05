@@ -1,11 +1,17 @@
+body {
+  
+  overflow-x: auto; /* Allow horizontal scrollbar if needed */
+}
+
 .gradient {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 50%; /* Reduzi a altura do gradiente pela metade */
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.371) 0%, rgba(255, 255, 255, 0) 100%);
 }
+
 .section-container {
   background-color: #ffffff;
   padding: 1rem;
