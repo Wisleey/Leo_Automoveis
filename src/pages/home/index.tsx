@@ -3,6 +3,10 @@ import { Container } from "../../components/container";
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
+import funcionario1 from '../../assets/FUNCIONARIO1.png'
+import funcionario2 from '../../assets/FUNCIONARIO2.png'
+import localizacao from '../../assets/localizacao.png'
+import email from '../../assets/email.png'
 
 
 import {
@@ -68,6 +72,8 @@ export function Home() {
       setCars(listcars);
     });
   }
+  const whatsappNumber = '5564992014770'; 
+  const whatsappNumber2 = '5564993147007'
 
   function handleImageLoad(id: string) {
     setLoadImages((prevImageLoaded) => [...prevImageLoaded, id]);
@@ -139,7 +145,7 @@ export function Home() {
 
   return (
     <>
-    <img src={logoImg} alt="Logo do site" className="w-full mt-6 mx-auto -mx-4" />
+    <img src={logoImg} alt="Logo do site" className="w-full mt-6 " />
 
     <Container>
       
@@ -232,9 +238,42 @@ export function Home() {
     </a>
   </div>
 </div>
-   
 
-    
+<div style={{
+  display: 'flex',
+  flexDirection: 'row', // Para que os elementos fiquem lado a lado na web
+  flexWrap: 'wrap', // Para que os elementos quebrem para a próxima linha quando não houver espaço suficiente
+  justifyContent: 'space-between', // Para alinhar os elementos à esquerda e à direita
+  background: 'blue',
+  padding: '20px' // Adicionando um padding para espaçamento interno
+}}>
+  <div style={{ flex: '1', maxWidth: 'calc(50% - 20px)', marginLeft: '20px' }}> {/* Div para o texto */}
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: '20px' }}> {/* Container para o texto */}
+      <h1 style={{ color: 'orange', marginBottom: '40px', fontSize: '24px', textAlign: 'center' }}>Nossa Equipe</h1>
+      <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '18px', textAlign: 'center' }}>Tire todas as suas dúvidas através do nosso atendimento online, direto pelo WhatsApp.</h2>
+      <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginBottom: '10px' }}>
+        <img src={localizacao} alt="Ícone de localização" style={{ width: '20px', marginRight: '10px' }} /> {/* Ícone de localização */}
+        <h3>R. 5, Jardim Roma, Caldas Novas-GO, 75690-000</h3> {/* Texto com o endereço */}
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
+        <img src={email} alt="Ícone de e-mail" style={{ width: '20px', marginRight: '10px' }} /> {/* Ícone de e-mail */}
+        <h3>leoauto@gmail.com</h3> {/* Texto com o e-mail */}
+      </div>
+    </div>
+  </div>
+  <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', maxWidth: 'calc(50% - 20px)' }}> {/* Div para as imagens dos funcionários */}
+    <div className="image-container" style={{ marginTop: '10px', marginBottom: '20px', marginRight: '10px', maxWidth: '300px' }}> 
+      <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber2}`}>
+        <img src={funcionario1} alt="Funcionário 1" style={{ width: '100%' }} />
+      </a>
+    </div>
+    <div className="image-container" style={{ marginTop: '10px', marginBottom: '20px', maxWidth: '300px' }}> 
+      <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}>
+        <img src={funcionario2} alt="Funcionário 2" style={{ width: '100%' }} />
+      </a>
+    </div>
+  </div>
+</div>
  
 
     </>

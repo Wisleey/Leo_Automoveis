@@ -50,6 +50,7 @@ body {
   background-color: #2563eb;
 }
 
+
 .whatsapp-button {
   position: absolute;
   left: 50%;
@@ -102,49 +103,27 @@ body {
 
 .blue-full {
   width: 100%;
-  background-color: blue;
-}
-@media (max-width: 414px) {
-  /* Estilos para iPhone XR, XS Max */
-  /* Ajustar o layout para uma imagem em cima da outra */
-  div > a:nth-child(2) {
-    display: none;
-  }
-  div > div {
-    padding: 0 !important;
-  }
+  background-color: rgb(0, 0, 255);
 }
 
-@media (max-width: 375px) {
-  /* Estilos para iPhone 8, 7, 6S, 6 e iPhone XS, X */
-  /* Ajustar o layout para uma imagem em cima da outra */
-  div > a:nth-child(2) {
-    display: none;
-  }
-  div > div {
-    padding: 0 !important;
-  }
-}
 
-@media (max-width: 360px) {
-  /* Estilos para Galaxy S9, Note 8, S8 */
-  /* Ajustar o layout para uma imagem em cima da outra */
-  div > a:nth-child(2) {
-    display: none;
-  }
-  div > div {
-    padding: 0 !important;
-  }
-}
 
-@media (max-width: 393px) {
-  /* Estilos para Pixel 3, 3 XL */
-  /* Ajustar o layout para uma imagem em cima da outra */
-  div > a:nth-child(2) {
-    display: none;
+@media only screen and (max-width: 600px) {
+  /* Estilos para dispositivos móveis */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  div > div {
-    padding: 0 !important;
+  
+
+  .image-container img {
+    display: block;
+    width: 200px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção original da imagem */
+    margin-bottom: 10px; /* Adiciona espaço entre as imagens */
   }
+  
+  
 }
 
