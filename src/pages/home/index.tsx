@@ -218,7 +218,7 @@ export function Home() {
        
         <div className="mobile-photo-container1" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', padding: '20px' }}>
           
-           <div style={{ flex: '1', maxWidth: 'calc(50% - 20px)', marginLeft: '80px' }}> {/* Div para o texto */}
+           <div style={{ flex: '1', maxWidth: 'calc(50% - 20px)', marginLeft: '130px' }}> {/* Div para o texto */}
     <div style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', marginBottom: '20px' }}> {/* Container para o texto */}
       <h1 style={{ color: 'orange', marginBottom: '40px', fontSize: '44px', textAlign: 'center' }}>Nossa Equipe</h1>
       <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '28px', textAlign: 'center' }}>Tire todas as suas dúvidas através do nosso atendimento online, direto pelo WhatsApp.</h2>
