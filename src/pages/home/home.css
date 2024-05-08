@@ -101,29 +101,42 @@ body {
   opacity: 1; /* Torna o botão visível */
 }
 
-.blue-full {
-  width: 100%;
-  background-color: rgb(0, 0, 255);
+.mobile-photo-container1{
+  background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgb(29, 51, 193) 0%, rgba(20,40,155,1) 45%);
+  
 }
-
-
 
 @media only screen and (max-width: 600px) {
-  /* Estilos para dispositivos móveis */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .mobile-photo-container {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%,rgb(29, 51, 193) 0%, rgba(20,40,155,1) 45%);/* Degradê de azul semi-transparente para azul sólido */
+  padding: 20px;
+  margin-bottom: 20px; /* Adiciona um espaço entre as seções */
   }
-  
 
-  .image-container img {
-    display: block;
-    width: 200px; /* Define a largura da imagem */
-    height: auto; /* Mantém a proporção original da imagem */
+  .mobile-photo-container .image {
     margin-bottom: 10px; /* Adiciona espaço entre as imagens */
   }
-  
-  
+
+  .mobile-photo-container .image img {
+    max-width: 100%; /* Garante que as imagens se ajustem ao tamanho da div */
+    display: block; /* Garante que as imagens ocupem a largura total da div */
+  }
 }
 
+/* Esconde a div em telas maiores que 600px */
+@media only screen and (min-width: 601px) {
+  .mobile-photo-container {
+    display: none;
+  }
+}
+@media (max-width: 375px) and (max-height: 812px),
+       (max-width: 414px) and (max-height: 896px),
+       (max-width: 414px) and (max-height: 736px),
+       (max-width: 375px) and (max-height: 667px),
+       (max-width: 393px) and (max-height: 786px) {
+  .mobile-photo-container1 {
+    display: none;
+  }
+}
