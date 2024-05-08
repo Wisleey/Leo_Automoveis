@@ -218,8 +218,8 @@ export function Home() {
        
         <div className="mobile-photo-container1" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', padding: '20px' }}>
           
-           <div style={{ flex: '1', maxWidth: 'calc(50% - 20px)', marginLeft: '20px' }}> {/* Div para o texto */}
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: '20px' }}> {/* Container para o texto */}
+           <div style={{ flex: '1', maxWidth: 'calc(50% - 20px)', marginLeft: '80px' }}> {/* Div para o texto */}
+    <div style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', marginBottom: '20px' }}> {/* Container para o texto */}
       <h1 style={{ color: 'orange', marginBottom: '40px', fontSize: '44px', textAlign: 'center' }}>Nossa Equipe</h1>
       <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '28px', textAlign: 'center' }}>Tire todas as suas dúvidas através do nosso atendimento online, direto pelo WhatsApp.</h2>
       <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginBottom: '10px', marginLeft: '80px', }}>
@@ -238,7 +238,7 @@ export function Home() {
       <img src={funcionario1} alt="Funcionário 1" style={{ width: '100%' }} />
     </a>
   </div>
-  <div className="image-container" style={{ marginTop: '10px', marginBottom: '20px', maxWidth: '300px',marginRight: '80px', }}> 
+  <div className="image-container" style={{ marginTop: '10px', marginBottom: '20px', maxWidth: '300px',marginRight: '200px', }}> 
     <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}>
       <img src={funcionario2} alt="Funcionário 2" style={{ width: '100%' }} />
     </a>
