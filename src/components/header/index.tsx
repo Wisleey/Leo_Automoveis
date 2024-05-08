@@ -14,7 +14,7 @@ export function Header() {
   };
 
   return (
-    <div className="w-full bg-[#14289b] mb-4">
+    <div className="w-full bg-[#1b4e93] mb-4">
       <div className="w-full max-w-7xl mx-auto">
         <header className="flex items-center justify-between px-4 py-2">
           <Link to="/">

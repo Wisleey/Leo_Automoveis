@@ -102,15 +102,14 @@ body {
 }
 
 .mobile-photo-container1{
-  background: #065eb2;
+  background: #1b4e93;
     
   
 }
 
 @media only screen and (max-width: 600px) {
   .mobile-photo-container {
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%,rgb(29, 51, 193) 0%, rgba(20,40,155,1) 45%);/* Degradê de azul semi-transparente para azul sólido */
+    background: #1b4e93;/* Degradê de azul semi-transparente para azul sólido */
   padding: 20px;
   margin-bottom: 20px; /* Adiciona um espaço entre as seções */
   }

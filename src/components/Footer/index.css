@@ -23,7 +23,7 @@ footer {
 }
 
 #footer_content {
-  background-color: var(--color-neutral-10);
+  background-color: #1b4e93;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +107,7 @@ footer {
 #footer_copyright {
   display: flex;
   justify-content: center;
-  background-color: var(--color-neutral-0);
+  background-color: #0f315f;
   font-size: 0.9rem;
   padding: 1.5rem;
   font-weight: 100px;
