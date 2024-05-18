@@ -75,7 +75,7 @@ footer {
 }
 
 .footer-list .footer-link {
-  color: var(--color-neutral-30);
+  color: #f5f5f5;
   transition: all 0.4s;
 }
 
@@ -137,4 +137,25 @@ footer {
   #footer_social_media {
     margin-top: 20px;
   }
+}
+.footer-list li {
+  position: relative;
+}
+
+.footer-list li::before {
+  content: '';
+  position: absolute;
+  right: 230px; /* Posiciona a seta na direita */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid var(--color-neutral-30); /* Cor laranja */
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+
+.footer-list li a {
+  padding-left: 10px; /* Espaçamento para acomodar a seta */
 }

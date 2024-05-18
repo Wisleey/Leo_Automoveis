@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import './index.css'
 
 import { useState } from 'react';
 
@@ -13,41 +14,65 @@ export function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
+ 
+
+  
   return (
-    <div className="w-full bg-[#1b4e93] mb-4">
+    
+    <div className="w-full bg-[#1b4e93] mb-0">
       <div className="w-full max-w-7xl mx-auto">
-        <header className="flex items-center justify-between px-4 py-2">
+        <header className="flex items-center justify-evenly px-5 py-5">
           <Link to="/">
             <img src={logoImg} alt="Logo do site" style={{ width: '100px' }} />
           </Link>
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-white focus:outline-none">
-              {isMenuOpen ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
+              {isMenuOpen ? <FontAwesomeIcon icon={faTimes} style={{ fontSize: '24px', color: '#fff' }} /> : <FontAwesomeIcon icon={faBars} />}
             </button>
           </div>
-          <nav className={`md:flex items-center ${isMenuOpen ? 'block' : 'hidden'}`}>
-            <ul className="flex flex-col md:flex-row md:items-center md:space-x-4">
+          <nav className={`nav-menu md:flex justify-center items-center ${isMenuOpen ? 'open' : ''}`}>
+            {isMenuOpen && (
+              <button onClick={toggleMenu} className="text-white focus:outline-none">
+                <FontAwesomeIcon icon={faTimes} style={{ fontSize: '30px', marginLeft: 'auto', color: '#fff' }} />
+              </button>
+            )}
+            <ul className="nav-links flex flex-col md:flex-row md:items-center md:space-x-10" style={{ color: '#fff' }}>
               <li>
-                <Link to="/car/car" className="text-white hover:text-gray-300">Início</Link>
+                <Link to="/car/car" className="nav-link" onClick={toggleMenu}>
+                  Início
+                </Link>
               </li>
               <li>
-                <Link to="/car/car" className="text-white hover:text-gray-300">Carros</Link>
+                <Link to="/car/car" className="nav-link" onClick={toggleMenu}>
+                  Carros
+                </Link>
               </li>
               <li>
-                <Link to="/login" className="text-white hover:text-gray-300">Entrar</Link>
+                <Link to="/login" className="nav-link" onClick={toggleMenu}>
+                  Entrar
+                </Link>
               </li>
               <li>
+                <Link to="/car/car" className="nav-link" onClick={toggleMenu}>
+                  Quero Vender
+                </Link>
+              </li>
+              <li className="ml-auto">
                 <a
                   href="https://api.whatsapp.com/send?phone=5564992014770"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center bg-green-500 text-white px-2 py-1 rounded-md hover:bg-green-600"
+                  onClick={toggleMenu}
                 >
                   <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
-                  WhatsApp
+                  Fale com um Vendedor
                 </a>
               </li>
             </ul>
+            
+            
           </nav>
         </header>
       </div>

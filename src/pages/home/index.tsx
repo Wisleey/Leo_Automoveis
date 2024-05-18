@@ -139,34 +139,43 @@ export function Home() {
 
   return (
     <>
-      <img src={logoImg} alt="Logo do site" className="w-full mt-6 " />
+      <div>
+  <img src={logoImg} alt="Logo do site" className="w-full" />
+  <div style={{ backgroundColor: '#ffffff', marginTop: '1px' }}>
+    <br></br>
+    <h1 className="font-bold text-center mt-6 text-3xl mb-4" style={{ color: '#F2442E', fontFamily: 'Lato' }}>
+      Encontre seu veículo
+    </h1>
+    <h2 className="text-center text-2xl" style={{ fontFamily: 'Lato' }}>Faça uma pesquisa completa</h2>
+    <br></br>
+    <section className="section-container">
+      <input
+        className="input-field"
+        placeholder="Digite o nome do carro..."
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button
+        type="button"
+        className="search-button"
+        onClick={handleSearchCar}
+      >
+        Buscar
+      </button>
+      
+    </section>
+    <br></br>
+  </div>
+</div>
+
 
       <Container>
-        <h1 className="font-bold text-center mt-6 text-3xl mb-4" style={{ color: '#F2442E', fontFamily: 'Exo2' }}>
-          Encontre seu veículo
-        </h1>
-        <h2 className="text-center text-2xl " style={{ fontFamily: 'Exo2' }}>Faça uma pesquisa completa</h2>
-        <br></br>
-        <section className="section-container">
-          <input
-            className="input-field"
-            placeholder="Digite o nome do carro..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button
-            type="button"
-            className="search-button"
-            onClick={handleSearchCar}
-          >
-            Buscar
-          </button>
-        </section>
+        
 
         <div className="mt-8">
           <div style={{ textAlign: 'center', marginLeft: '10px' }}>
-            <h1 style={{ color: '#F2442E', fontSize: '3rem', fontFamily: 'Exo2' }}>Nossos Veículos</h1>
-            <h2 style={{ textAlign: 'center', marginLeft: '0px', fontFamily: 'Exo2', fontSize: '1.5rem' }}>As melhores ofertas para você adquirir seu carro novo!</h2>
+            <h1 style={{ color: '#F2442E', fontSize: '3rem', fontFamily: 'Lato' }}>Nossos Veículos</h1>
+            <h2 style={{ textAlign: 'center', marginLeft: '0px', fontFamily: 'Lato', fontSize: '1.5rem' }}>As melhores ofertas para você adquirir seu carro novo!</h2>
           </div>
           <div className="mt-7"></div>
           <main className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -220,27 +229,27 @@ export function Home() {
           
            <div style={{ flex: '1', maxWidth: 'calc(50% - 20px)', marginLeft: '130px' }}> {/* Div para o texto */}
     <div style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', marginBottom: '20px' }}> {/* Container para o texto */}
-      <h1 style={{ color: 'orange', marginBottom: '40px', fontSize: '44px', textAlign: 'center' }}>Nossa Equipe</h1>
-      <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '28px', textAlign: 'center' }}>Tire todas as suas dúvidas através do nosso atendimento online, direto pelo WhatsApp.</h2>
+      <h1 style={{ color: 'orange', marginBottom: '40px', fontSize: '44px', textAlign: 'center', fontFamily: 'Lato' }}>Nossa Equipe</h1>
+      <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '20px', textAlign: 'center', fontFamily: 'Lato' }}>Tire todas as suas dúvidas através<br></br> do nosso atendimento online, direto<br></br> pelo WhatsApp.</h2>
       <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginBottom: '10px', marginLeft: '80px', }}>
         <img src={localizacao} alt="Ícone de localização" style={{ width: '30px', marginRight: '10px' }} /> {/* Ícone de localização */}
-        <h3>R. 5, Jardim Roma, Caldas Novas-GO, 75690-000</h3> {/* Texto com o endereço */}
+        <h3 style={{ fontFamily: 'Lato' }}>R. 5, Jardim Roma, Caldas Novas-GO, 75690-000</h3> {/* Texto com o endereço */}
       </div>
       <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginLeft: '80px' }}>
         <img src={email} alt="Ícone de e-mail" style={{ width: '30px', marginRight: '10px'  }} /> {/* Ícone de e-mail */}
-        <h3>leoauto@gmail.com</h3> {/* Texto com o e-mail */}
+        <h3 style={{ fontFamily: 'Lato' }}>leoauto@gmail.com</h3> {/* Texto com o e-mail */}
       </div>
     </div>
   </div>
   <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', maxWidth: 'calc(50% - 20px)' }}> {/* Div para as imagens dos funcionários */}
   <div className="image-container" style={{ marginTop: '10px', marginBottom: '20px', marginRight: '30px', maxWidth: '300px', marginLeft: '-5px' }}> {/* Adicionei marginLeft para mover as imagens um pouco para a esquerda */}
     <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber2}`}>
-      <img src={funcionario1} alt="Funcionário 1" style={{ width: '100%' }} />
+      <img src={funcionario1} alt="Funcionário 1" style={{ maxWidth: '100%', fontFamily: 'Lato' }} />
     </a>
   </div>
   <div className="image-container" style={{ marginTop: '10px', marginBottom: '20px', maxWidth: '300px',marginRight: '200px', }}> 
     <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}>
-      <img src={funcionario2} alt="Funcionário 2" style={{ width: '100%' }} />
+      <img src={funcionario2} alt="Funcionário 2" style={{ maxWidth: '100%', fontFamily: 'Lato' }} />
     </a>
   </div>
 </div>
@@ -256,44 +265,48 @@ export function Home() {
       {isMobile && (
         <div className="mobile-photo-container" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' }}>
-          <h1 style={{ color: 'orange', marginBottom: '40px', fontSize: '34px', textAlign: 'center' }}>Nossa Equipe</h1>
-          <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '18px', textAlign: 'center' }}>Tire todas as suas dúvidas através do nosso atendimento online, direto pelo WhatsApp.</h2>
+          <h1 style={{ color:'#F2442E', marginBottom: '40px', fontSize: '34px', textAlign: 'center', fontFamily: 'Lato' }}>Nossa Equipe</h1>
+          <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '18px', textAlign: 'center', fontFamily: 'Lato' }}>Tire todas as suas dúvidas através do nosso atendimento online, direto pelo WhatsApp.</h2>
           <br />
           <div style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
             <img src={email} alt="Ícone de e-mail" style={{ width: '30px', marginRight: '10px' }} />
-            <h3>leoauto@gmail.com</h3>
+            <h3 style={{ fontFamily: 'Lato' }}>leoauto@gmail.com</h3>
           </div>
           <br></br>
           <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginBottom: '10px', marginRight: '30px' }}>
             <img src={localizacao} alt="Ícone de localização" style={{ width: '30px', marginRight: '20px' }} />
-            <h3>R. 5, Jardim Roma, Caldas Novas-GO, 75690-000</h3>
+            <h3 style={{ fontFamily: 'Lato' }}>R. 5, Jardim Roma, <br></br>Caldas Novas-GO, <br></br>75690-000</h3>
           </div>
           <br />
          
         </div>
         <div className="image" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber2}`}>
-            <img src={funcionario1} alt="Funcionário 1" />
+            <img src={funcionario1} alt="Funcionário 1" style={{ fontFamily: 'Lato' }} />
           </a>
         </div>
         <div className="image" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`}>
-            <img src={funcionario2} alt="Funcionário 2" />
+            <img src={funcionario2} alt="Funcionário 2" style={{ fontFamily: 'Lato' }} />
           </a>
         </div>
       </div>
       )}
       <div id="Mapa" style={{ width: '100%', height: '400px', marginTop: '20px', marginBottom: '20px' }}></div>
-      <div style={{ backgroundColor: '#F2442E', width: '99vw', padding: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'flex-start' }}>
- 
- <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '10px' }}>Financiamento facilitado</h1>
- <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '10px' }}>Faça uma simulação de financiamento sem compromisso</h3>
 
-<div>
- <a href="https://api.whatsapp.com/send?phone=5583991812589" target="_blank" rel="noopener noreferrer">
-   <button style={{ backgroundColor: 'green', color: 'white', padding: '8px 20px', border: 'none', borderRadius: '10px', cursor: 'pointer' }}>WhatsApp</button>
- </a>
-</div>
+      <div style={{ backgroundColor: '#F2442E', width: '99vw', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
+
+  <div style={{ maxWidth: '45%', textAlign: 'left', fontFamily: 'Lato' }}>
+    <h1 style={{ color: 'white', fontSize: '2rem', marginBottom: '20px' }}>Financiamento facilitado</h1>
+    <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '20px' }}>Faça uma simulação de financiamento sem compromisso</h3>
+  </div>
+
+  <div>
+    <a href="https://api.whatsapp.com/send?phone=5583991812589" target="_blank" rel="noopener noreferrer">
+      <button style={{ backgroundColor: 'green', color: 'white', padding: '2px 10px', border: 'none', borderRadius: '10px', cursor: 'pointer', fontFamily: 'Lato'  }}>Conversar no WhatsApp</button>
+    </a>
+  </div>
+
 </div>
     </>
   );
