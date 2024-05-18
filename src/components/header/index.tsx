@@ -66,7 +66,7 @@ export function Header() {
                   className="flex items-center bg-green-500 text-white px-2 py-1 rounded-md hover:bg-green-600"
                   onClick={toggleMenu}
                 >
-                  <FontAwesomeIcon icon={faWhatsapp} className="mr-2" />
+                  <FontAwesomeIcon icon={faWhatsapp} className="mr-6" />
                   Fale com um Vendedor
                 </a>
               </li>

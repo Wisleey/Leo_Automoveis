@@ -14,9 +14,10 @@ const Footer: React.FC = () => {
     <div id="footer_content" className="footer-content">
       <div id="footer_logo" className="footer-section">
         <img src={logo} alt="Logo" />
-      </div>
-      <div id="footer_links" className="footer-section">
-        <ul className="footer-list">
+      </div><div></div>
+      <div id="footer_links" className="footer-section"style={{ textAlign: 'center', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'space-around'}}>
+        
+        <ul className="footer-list" >
           <li>
             <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`} className="footer-link">Comprar</a>
           </li>
