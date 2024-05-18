@@ -1,7 +1,13 @@
 /* index.css ou App.css */
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
 
-
+@font-face {
+  font-family: 'Ubuntu Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Sans'), local('UbuntuSans'),
+       url('/fonts/Ubuntu-Regular.woff2') format('woff2'), /* Caminho para o arquivo WOFF2 */
+       url('/fonts/Ubuntu-Regular.woff') format('woff'); /* Caminho para o arquivo WOFF */
+}
 
 
 body {

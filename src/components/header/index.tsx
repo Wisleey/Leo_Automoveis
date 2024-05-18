@@ -13,6 +13,9 @@ export function Header() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const whatsappNumber2 = '5564993147007';
+  const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber2}`;
+
 
   
  
@@ -54,10 +57,17 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link to="/car/car" className="nav-link" onClick={toggleMenu}>
-                  Quero Vender
-                </Link>
-              </li>
+  <a
+    href={whatsappLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="nav-link"
+    onClick={toggleMenu}
+  >
+    Quero Vender
+  </a>
+</li>
+
               <li className="ml-auto">
                 <a
                   href="https://api.whatsapp.com/send?phone=5564992014770"
