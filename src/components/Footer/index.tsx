@@ -47,8 +47,9 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </div>
-    <div id="footer_copyright">
-      Dev WisleyRodrigues 2024 Todos Direitos Reservados
+    <div id="footer_copyright"style={{ textAlign: 'center', color: 'white' }}>
+      Leo Automoveis<br></br> Todos os direitos reservados
+      
     </div>
   </footer>
 );

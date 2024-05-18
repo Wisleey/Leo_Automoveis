@@ -229,7 +229,7 @@ export function Home() {
           
            <div style={{ flex: '1', maxWidth: 'calc(50% - 20px)', marginLeft: '130px' }}> {/* Div para o texto */}
     <div style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', marginBottom: '20px' }}> {/* Container para o texto */}
-      <h1 style={{ color: 'orange', marginBottom: '40px', fontSize: '44px', textAlign: 'center', fontFamily: 'Lato' }}>Nossa Equipe</h1>
+      <h1 style={{ color: '#F2442E', marginBottom: '40px', fontSize: '44px', textAlign: 'center', fontFamily: 'Lato' }}>Nossa Equipe</h1>
       <h2 style={{ color: 'white', marginBottom: '10px', fontSize: '20px', textAlign: 'center', fontFamily: 'Lato' }}>Tire todas as suas dúvidas através<br></br> do nosso atendimento online, direto<br></br> pelo WhatsApp.</h2>
       <div style={{ display: 'flex', alignItems: 'center', color: 'white', marginBottom: '10px', marginLeft: '80px', }}>
         <img src={localizacao} alt="Ícone de localização" style={{ width: '30px', marginRight: '10px' }} /> {/* Ícone de localização */}
