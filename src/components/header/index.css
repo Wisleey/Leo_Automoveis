@@ -1,6 +1,21 @@
+/* index.css */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  height: 100%; /* Preenche a altura do container */
+  margin-top: 10px; /* Adiciona um espaço entre o logo e os links */
+}
+
+.nav-menu {
+  padding: 10px; /* Adiciona um espaçamento interno */
+}
+
 @media (max-width: 600px) {
   .nav-menu {
-    position: fixed;
+    display: flex;
+    position:absolute;
     top: 0;
     right: -100%; /* Alterado para abrir do lado direito */
     width: 70%;

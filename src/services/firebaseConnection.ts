@@ -6,12 +6,13 @@ import { getStorage } from 'firebase/storage'
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAcR_4YBtXoOcQeixPUQOtY5zDJtL8037M",
-  authDomain: "leoautomoveis-3f53a.firebaseapp.com",
-  projectId: "leoautomoveis-3f53a",
-  storageBucket: "leoautomoveis-3f53a.appspot.com",
-  messagingSenderId: "287127655152",
-  appId: "1:287127655152:web:59e6c10621c27a08d2a835"
+  apiKey: "AIzaSyDfFnKVI5ZyJf7Vo7wQ6nNjRqN1-c78yP0",
+  authDomain: "leo-automoveis.firebaseapp.com",
+  projectId: "leo-automoveis",
+  storageBucket: "leo-automoveis.appspot.com",
+  messagingSenderId: "639895502545",
+  appId: "1:639895502545:web:82fc24166ad00ff8110ff0",
+  measurementId: "G-0YPHRD3MF5"
 };
 
 const app = initializeApp(firebaseConfig);

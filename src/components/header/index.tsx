@@ -35,11 +35,8 @@ export function Header() {
             </button>
           </div>
           <nav className={`nav-menu md:flex justify-center items-center ${isMenuOpen ? 'open' : ''}`}>
-            {isMenuOpen && (
-              <button onClick={toggleMenu} className="text-white focus:outline-none">
-                <FontAwesomeIcon icon={faTimes} style={{ fontSize: '30px', marginLeft: 'auto', color: '#fff' }} />
-              </button>
-            )}
+            
+          
             <ul className="nav-links flex flex-col md:flex-row md:items-center md:space-x-10" style={{ color: '#fff' }}>
               <li>
                 <Link to="/car/car" className="nav-link" onClick={toggleMenu}>
