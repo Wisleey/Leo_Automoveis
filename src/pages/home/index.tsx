@@ -12,7 +12,11 @@ import { collection, query, getDocs, orderBy, where } from 'firebase/firestore';
 import { db } from '../../services/firebaseConnection';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa os estilos do carrossel
-import banner1 from '../../assets/banner.png'; // Adicione as imagens do carrossel
+import banner1 from '../../assets/BANNER01.png';
+import banner2 from '../../assets/BANNER2.png';
+import banner3 from '../../assets/BANNER03.png';
+import banner4 from '../../assets/BANNER4.png';
+ 
 
 import './home.css';
 
@@ -148,10 +152,13 @@ export function Home() {
             <img src={banner1} alt="Banner 1" className="carousel-image" />
           </div>
           <div>
-            <img src={banner1} alt="Banner 2" className="carousel-image" />
+            <img src={banner2} alt="Banner 2" className="carousel-image" />
           </div>
           <div>
-            <img src={banner1} alt="Banner 3" className="carousel-image" />
+            <img src={banner3} alt="Banner 3" className="carousel-image" />
+          </div>
+          <div>
+            <img src={banner4} alt="Banner 4" className="carousel-image" />
           </div>
         </Carousel>
         <div style={{ backgroundColor: '#ffffff', marginTop: '1px' }}>
