@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Ubuntu Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/fonts.css') format('woff2'),
+    url('../fonts/fonts.css') format('woff');
+  }

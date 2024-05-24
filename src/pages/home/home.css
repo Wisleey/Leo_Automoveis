@@ -1,20 +1,9 @@
-/* index.css ou App.css */
-
-@font-face {
-  font-family: 'Ubuntu Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Ubuntu Sans'), local('UbuntuSans'),
-       url('/fonts/Ubuntu-Regular.woff2') format('woff2'), /* Caminho para o arquivo WOFF2 */
-       url('/fonts/Ubuntu-Regular.woff') format('woff'); /* Caminho para o arquivo WOFF */
-}
-
 
 body {
   
-  overflow-x: auto; /* Allow horizontal scrollbar if needed */
+  overflow-x: auto; 
 }
-/* index.css */
+
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
@@ -28,8 +17,8 @@ body {
   height: auto;
 }
 .carousel-image {
-  height: 300px; /* Defina a altura desejada para as imagens do carrossel */
-  object-fit: contain; /* Garante que as imagens mantenham proporções e ocupem todo o espaço da altura definida */
+  height: 300px; 
+  object-fit: contain; 
   height: auto;
   width: 100px;
 
@@ -45,36 +34,36 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 50%; /* Reduzi a altura do gradiente pela metade */
+  bottom: 50%; 
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.371) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .section-container {
   background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 0.75rem;
-  max-width: 48rem; /* 3xl */
+  max-width: 48rem; 
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Sombras mais pronunciadas */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
 }
 
 .input-field {
   width: 100%;
   border: 0.125rem solid #e5e7eb;
   border-radius: 0.75rem;
-  height: 3rem; /* Altura aumentada */
-  padding: 0.75rem; /* Espaçamento interno aumentado */
+  height: 3rem; 
+  padding: 0.75rem; 
   outline: none;
-  transition: border-color 0.3s ease; /* Efeito de transição suave */
-  font-size: 1rem; /* Tamanho da fonte aumentado */
+  transition: border-color 0.3s ease; 
+  font-size: 1rem; 
 }
 
 .input-field:focus {
-  border-color: #2563eb; /* Cor da borda ao focar */
-  box-shadow: 0 0 0 0.125rem rgba(37, 99, 235, 0.25); /* Sombra ao focar */
+  border-color: #2563eb; 
+  box-shadow: 0 0 0 0.125rem rgba(37, 99, 235, 0.25); 
 }
 
 .search-button {
@@ -83,11 +72,11 @@ body {
   font-family: 'Exo2', sans-serif;
   border: none;
   border-radius: 0.75rem;
-  padding: 0.75rem 1.5rem; /* Espaçamento interno aumentado */
-  font-size: 1rem; /* Tamanho da fonte aumentado */
+  padding: 0.75rem 1.5rem; 
+  font-size: 1rem; 
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Efeito de transição suave */
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombras mais pronunciadas */
+  transition: background-color 0.3s ease; 
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); 
 }
 
 .search-button:hover {
@@ -117,7 +106,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   top: 60%;
-  display: none; /* Começa escondido */
+  display: none; 
   color: white;
 }
 
@@ -137,11 +126,11 @@ body {
 .visible .texto {
  
 
-  opacity: 1; /* Torna o texto visível */
+  opacity: 1; 
 }
 
 .whatsapp-button.visible {
-  opacity: 1; /* Torna o botão visível */
+  opacity: 1; 
 }
 
 .mobile-photo-container1{
@@ -152,18 +141,17 @@ body {
 
 @media only screen and (max-width: 600px) {
   .mobile-photo-container {
-    background: #1b4e93;/* Degradê de azul semi-transparente para azul sólido */
+    background: #1b4e93;
   padding: 20px;
-  margin-bottom: 20px; /* Adiciona um espaço entre as seções */
+  margin-bottom: 20px; 
   }
 
   .mobile-photo-container .image {
-    margin-bottom: 10px; /* Adiciona espaço entre as imagens */
-  }
+    margin-bottom: 10px; }
 
   .mobile-photo-container .image img {
-    max-width: 100%; /* Garante que as imagens se ajustem ao tamanho da div */
-    display: block; /* Garante que as imagens ocupem a largura total da div */
+    max-width: 100%; 
+    display: block; 
   }
 }
 
