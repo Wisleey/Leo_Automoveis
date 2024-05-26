@@ -119,7 +119,7 @@ export function Home() {
   return (
     <>
       <div>
-      <Carousel autoPlay interval={2000} infiniteLoop showThumbs={false}>
+      <Carousel autoPlay interval={4000} infiniteLoop showThumbs={false}>
           <div>
             <img src={banner1} alt="Banner 1" className="carousel-image" />
           </div>
