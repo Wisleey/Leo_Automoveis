@@ -243,7 +243,7 @@ export function New() {
 
 
           <div className="flex w-full mb-3 flex-row items-center gap-4">
-           
+            
 
             <div className="w-full">
               <p className="mb-2 font-medium">Cidade</p>
@@ -252,7 +252,7 @@ export function New() {
                 register={register}
                 name="city"
                 error={errors.city?.message}
-                placeholder="Ex: Caldas novas - Goias..."
+                placeholder="Ex: Campo Grande - MS..."
               />
             </div>
 
