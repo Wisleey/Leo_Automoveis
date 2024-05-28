@@ -1,0 +1,9 @@
+.swal-confirm-button {
+    background-color: rgb(242, 11, 11); 
+    color: white; 
+}
+
+.swal-cancel-button {
+    background-color: rgb(0, 60, 255); 
+    color: white; 
+}

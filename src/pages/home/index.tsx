@@ -1,7 +1,8 @@
-import { useState, useEffect,} from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Container } from "../../components/container";
-
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
 import funcionario1 from '../../assets/FUNCIONARIO1.png';
 import funcionario2 from '../../assets/FUNCIONARIO2.png';
@@ -41,11 +42,11 @@ export function Home() {
   const [input, setInput] = useState('');
   const whatsappNumber = '5564992014770';
   const whatsappNumber2 = '5564993147007';
-  
+  const mapRef = useRef<L.Map | null>(null);
 
   useEffect(() => {
     loadCars();
-    
+    renderMap();
   }, []);
 
   function loadCars() {
@@ -111,7 +112,38 @@ export function Home() {
     setCars(listcars);
   }
 
-  
+  function renderMap() {
+    if (mapRef.current) {
+      return; // Se o mapa já foi inicializado, não faz nada
+    }
+
+    const address = '793G+7X Jardim Roma, Caldas Novas - GO';
+    const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
+      address
+    )}&key=AIzaSyBnHXyV9AqBQ8kspgEKprx4eUhFiAqqO24`;
+
+    fetch(geocodeUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        const location = data.results[0].geometry.location;
+        const latitude = location.lat;
+        const longitude = location.lng;
+        const zoom = 15;
+
+        mapRef.current = L.map('Mapa').setView([latitude, longitude], zoom);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        }).addTo(mapRef.current);
+        const marker = L.marker([latitude, longitude]).addTo(mapRef.current);
+        marker.bindPopup('Leo Automoveis').openPopup();
+
+        marker.on('click', function () {
+          const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+          window.open(googleMapsUrl, '_blank');
+        });
+      });
+  }
 
   // Use a função useMediaQuery para detectar o tamanho da tela
   const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
@@ -119,7 +151,7 @@ export function Home() {
   return (
     <>
       <div>
-      <Carousel autoPlay interval={4000} infiniteLoop showThumbs={false}>
+      <Carousel autoPlay interval={2000} infiniteLoop showThumbs={false}>
           <div>
             <img src={banner1} alt="Banner 1" className="carousel-image" />
           </div>
@@ -269,7 +301,7 @@ export function Home() {
           </div>
         </div>
       )}
-     
+      <div id="Mapa" style={{ width: '100%', height: '400px', marginTop: '20px', marginBottom: '20px' }}></div>
 
       <div style={{ backgroundColor: '#F2442E', width: '99vw', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
         <div style={{ maxWidth: '45%', textAlign: 'left', fontFamily: 'Ubuntu Sans, sans-serif' }}>
@@ -282,7 +314,6 @@ export function Home() {
           </a>
         </div>
       </div>
-      
     </>
   );
 }

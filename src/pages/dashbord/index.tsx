@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react'
 import { Container } from "../../components/container";
 import { DashboardHeader } from '../../components/panelheader'
 import Swal from 'sweetalert2';
-
+import './index.css';
 import { FiTrash2 } from 'react-icons/fi'
 
 import { collection, getDocs, where, query, doc, deleteDoc } from 'firebase/firestore'
@@ -80,7 +80,11 @@ export function Dashboard() {
         icon: 'question',
         showCancelButton: true,
         confirmButtonText: 'Sim',
-        cancelButtonText: 'Cancelar'
+        cancelButtonText: 'Cancelar',
+        customClass: {
+          confirmButton: 'swal-confirm-button',
+          cancelButton: 'swal-cancel-button'
+      }
       });
 
       if (confirmDelete.isConfirmed) {
