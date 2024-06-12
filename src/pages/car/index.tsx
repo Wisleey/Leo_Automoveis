@@ -146,7 +146,7 @@ export function CarDetail() {
             onClick={(e) => {
               e.preventDefault();
               const selectedWhatsapp = getRandomWhatsapp();
-              window.open(`https://api.whatsapp.com/send?phone=${selectedWhatsapp}&text=Olá, vi este ${car.name} no site Leo Automóveis e fiquei interessado! Confira o link: ${window.location.origin}${currentUrl}`, '_blank');
+              window.open(`https://api.whatsapp.com/send?phone=${selectedWhatsapp}&text=Olá, vi este ${car.name} ${car.price} ${car.km} no site Leo Automóveis e fiquei interessado! Confira o link: ${window.location.origin}${currentUrl}`, '_blank');
             }}
             className="cursor-pointer bg-green-600 w-full text-white flex items-center justify-center gap-3 my-8 h-14 text-xl rounded-lg font-medium"
           >
