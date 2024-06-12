@@ -114,7 +114,7 @@ export function Home() {
 
   function renderMap() {
     if (mapRef.current) {
-      return; // Se o mapa já foi inicializado, não faz nada
+      return; 
     }
 
     const address = '793G+7X Jardim Roma, Caldas Novas - GO';
@@ -151,7 +151,7 @@ export function Home() {
   return (
     <>
       <div>
-      <Carousel autoPlay interval={2000} infiniteLoop showThumbs={false}>
+      <Carousel autoPlay interval={5000} infiniteLoop showThumbs={false}>
           <div>
             <img src={banner1} alt="Banner 1" className="carousel-image" />
           </div>
@@ -309,7 +309,7 @@ export function Home() {
           <h3 style={{ color: 'white', fontSize: '1.2rem', marginBottom: '20px' }}>Faça uma simulação de financiamento sem compromisso</h3>
         </div>
         <div>
-          <a href="https://api.whatsapp.com/send?phone=5583991812589" target="_blank" rel="noopener noreferrer">
+          <a href={`https://api.whatsapp.com/send?phone=${whatsappNumber}`} target="_blank" rel="noopener noreferrer">
             <button style={{ backgroundColor: 'green', color: 'white', padding: '2px 10px', border: 'none', borderRadius: '10px', cursor: 'pointer', fontFamily: 'Lato' }}>Conversar no WhatsApp</button>
           </a>
         </div>

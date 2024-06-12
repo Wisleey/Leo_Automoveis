@@ -26,16 +26,12 @@ const schema = z.object({
   km: z.string().nonempty("O KM do carro é obrigatório"),
   price: z.string().nonempty("O preço é obrigatório"),
   city: z.string().nonempty("A cidade é obrigatória"),
-  whatsapp: z.string().min(1, "O Telefone é obrigatório").refine((value) => /^(\d{11,12})$/.test(value), {
-    message: "Numero de telefone invalido."
-  }),
   description: z.string().nonempty("A descrição é obrigatória")
 })
 
 type FormData = z.infer<typeof schema>;
 
-
-interface ImageItemProps{
+interface ImageItemProps {
   uid: string;
   name: string;
   previewUrl: string;
@@ -51,25 +47,21 @@ export function New() {
 
   const [carImages, setCarImages] = useState<ImageItemProps[]>([])
 
-
-  async function handleFile(e: ChangeEvent<HTMLInputElement>){
-    if(e.target.files && e.target.files[0]){
+  async function handleFile(e: ChangeEvent<HTMLInputElement>) {
+    if (e.target.files && e.target.files[0]) {
       const image = e.target.files[0]
 
-      if(image.type === 'image/jpeg' || image.type === 'image/png'){
+      if (image.type === 'image/jpeg' || image.type === 'image/png') {
         await handleUpload(image)
-      }else{
+      } else {
         alert("Envie uma imagem jpeg ou png!")
         return;
       }
-
-
     }
   }
-  
-  
-  async function handleUpload(image: File){
-    if(!user?.uid){
+
+  async function handleUpload(image: File) {
+    if (!user?.uid) {
       return;
     }
 
@@ -79,7 +71,7 @@ export function New() {
     const uploadRef = ref(storage, `images/${currentUid}/${uidImage}`)
 
     uploadBytes(uploadRef, image)
-    .then((snapshot) => {
+      .then((snapshot) => {
         getDownloadURL(snapshot.ref).then((downloadUrl) => {
           const imageItem = {
             name: uidImage,
@@ -88,23 +80,20 @@ export function New() {
             url: downloadUrl,
           }
 
-          setCarImages((images) => [...images, imageItem] )
-          toast.success("Imagem cadastrada com sucesso!")  
-
+          setCarImages((images) => [...images, imageItem])
+          toast.success("Imagem cadastrada com sucesso!")
         })
-    })
-
+      })
   }
 
-  function onSubmit(data: FormData){
-
-    if(carImages.length === 0){
+  function onSubmit(data: FormData) {
+    if (carImages.length === 0) {
       toast.error("Envie pelo menos 1 imagem!")
       return;
     }
-    
-    const carListImages = carImages.map( car => {
-      return{
+
+    const carListImages = carImages.map(car => {
+      return {
         uid: car.uid,
         name: car.name,
         url: car.url
@@ -114,7 +103,6 @@ export function New() {
     addDoc(collection(db, "cars"), {
       name: data.name.toUpperCase(),
       model: data.model,
-      whatsapp: data.whatsapp,
       city: data.city,
       year: data.year,
       km: data.km,
@@ -125,40 +113,34 @@ export function New() {
       uid: user?.uid,
       images: carListImages,
     })
-    .then(() => {
-      reset();
-      setCarImages([]);
-      console.log("CADASTRADO COM SUCESSO!");
-      toast.success("Carro cadastrado com sucesso!")
-    })
-    .catch((error) => {
-      console.log(error)
-      console.log("ERRO AO CADASTRAR NO BANCO")
-    })
-
-    
+      .then(() => {
+        reset();
+        setCarImages([]);
+        console.log("CADASTRADO COM SUCESSO!");
+        toast.success("Carro cadastrado com sucesso!")
+      })
+      .catch((error) => {
+        console.log(error)
+        console.log("ERRO AO CADASTRAR NO BANCO")
+      })
   }
 
-  async function handleDeleteImage(item: ImageItemProps){
+  async function handleDeleteImage(item: ImageItemProps) {
     const imagePath = `images/${item.uid}/${item.name}`;
 
     const imageRef = ref(storage, imagePath);
 
-    try{
+    try {
       await deleteObject(imageRef)
       setCarImages(carImages.filter((car) => car.url !== item.url))
-    }catch(err){
+    } catch (err) {
       console.log("ERRO AO DELETAR")
     }
-
-
-
   }
-
 
   return (
     <Container>
-      <DashboardHeader/>
+      <DashboardHeader />
 
       <div className="w-full bg-white p-3 rounded-lg flex flex-col sm:flex-row items-center gap-2">
         <button className="border-2 w-48 rounded-lg flex items-center justify-center cursor-pointer border-gray-600 h-32 md:w-48">
@@ -166,18 +148,18 @@ export function New() {
             <FiUpload size={30} color="#000" />
           </div>
           <div className="cursor-pointer">
-            <input 
-              type="file" 
-              accept="image/*" 
-              className="opacity-0 cursor-pointer" 
-              onChange={handleFile} 
+            <input
+              type="file"
+              accept="image/*"
+              className="opacity-0 cursor-pointer"
+              onChange={handleFile}
             />
           </div>
         </button>
 
-        {carImages.map( item => (
+        {carImages.map(item => (
           <div key={item.name} className="w-full h-32 flex items-center justify-center relative">
-            <button className="absolute" onClick={() => handleDeleteImage(item) }>
+            <button className="absolute" onClick={() => handleDeleteImage(item)}>
               <FiTrash size={28} color="#FFF" />
             </button>
             <img
@@ -192,7 +174,7 @@ export function New() {
       <div className="w-full bg-white p-3 rounded-lg flex flex-col sm:flex-row items-center gap-2 mt-2">
         <form
           className="w-full"
-          onSubmit={handleSubmit(onSubmit)}  
+          onSubmit={handleSubmit(onSubmit)}
         >
           <div className="mb-3">
             <p className="mb-2 font-medium">Nome do carro</p>
@@ -224,7 +206,7 @@ export function New() {
                 register={register}
                 name="year"
                 error={errors.year?.message}
-                placeholder="Ex: 2016/2016..."
+                placeholder="Ex: 2022/2022..."
               />
             </div>
 
@@ -238,22 +220,9 @@ export function New() {
                 placeholder="Ex: 23.900..."
               />
             </div>
-
           </div>
 
-
           <div className="flex w-full mb-3 flex-row items-center gap-4">
-            <div className="w-full">
-              <p className="mb-2 font-medium">Telefone / Whatsapp</p>
-              <Input
-                type="text"
-                register={register}
-                name="whatsapp"
-                error={errors.whatsapp?.message}
-                placeholder="Ex: 011999101923..."
-              />
-            </div>
-
             <div className="w-full">
               <p className="mb-2 font-medium">Cidade</p>
               <Input
@@ -261,10 +230,9 @@ export function New() {
                 register={register}
                 name="city"
                 error={errors.city?.message}
-                placeholder="Ex: Campo Grande - MS..."
+                placeholder="Ex: Caldas Novas - Go..."
               />
             </div>
-
           </div>
 
           <div className="mb-3">
@@ -293,7 +261,6 @@ export function New() {
           <button type="submit" className="w-full rounded-md bg-zinc-900 text-white font-medium h-10">
             Cadastrar
           </button>
-
         </form>
       </div>
     </Container>
