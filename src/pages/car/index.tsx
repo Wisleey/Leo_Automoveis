@@ -18,7 +18,6 @@ interface CarProps {
   price: string | number;
   owner: string;
   uid: string;
-  
   images: ImagesCarProps[];
 }
 
@@ -55,7 +54,6 @@ export function CarDetail() {
             uid: snapshot.data()?.uid,
             description: snapshot.data()?.description,
             created: snapshot.data()?.created,
-          
             price: snapshot.data()?.price,
             km: snapshot.data()?.km,
             owner: snapshot.data()?.owner,
@@ -146,7 +144,7 @@ export function CarDetail() {
             onClick={(e) => {
               e.preventDefault();
               const selectedWhatsapp = getRandomWhatsapp();
-              window.open(`https://api.whatsapp.com/send?phone=${selectedWhatsapp}&text=Olá vi esse ${car.name} no site Leo Automoveis e fiquei interessado!`, '_blank');
+              window.open(`https://api.whatsapp.com/send?phone=${selectedWhatsapp}&text=Olá, vi este ${car.name} no site Leo Automóveis e fiquei interessado! Confira o link: ${window.location.origin}/carro/${car.id}`, '_blank');
             }}
             className="cursor-pointer bg-green-600 w-full text-white flex items-center justify-center gap-3 my-8 h-14 text-xl rounded-lg font-medium"
           >
@@ -154,6 +152,7 @@ export function CarDetail() {
             <FaWhatsapp size={26} color="#FFF" />
           </a>
         </main>
+        // Redireciona o usuário para o WhatsApp com uma mensagem personalizada incluindo o nome do carro e o link da página do carro
       )}
     </Container>
   );
