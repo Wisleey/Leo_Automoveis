@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container } from '../../components/container';
 import { FaWhatsapp } from 'react-icons/fa';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../services/firebaseConnection';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -32,6 +32,8 @@ export function CarDetail() {
   const [car, setCar] = useState<CarProps>();
   const [sliderPerView, setSliderPerView] = useState<number>(2);
   const navigate = useNavigate();
+  const location = useLocation();
+  const currentUrl = location.pathname;
 
   useEffect(() => {
     async function loadCar() {
@@ -144,7 +146,7 @@ export function CarDetail() {
             onClick={(e) => {
               e.preventDefault();
               const selectedWhatsapp = getRandomWhatsapp();
-              window.open(`https://api.whatsapp.com/send?phone=${selectedWhatsapp}&text=Olá, vi este ${car.name} no site Leo Automóveis e fiquei interessado! Confira o link: ${window.location.origin}/carro/${car.id}`, '_blank');
+              window.open(`https://api.whatsapp.com/send?phone=${selectedWhatsapp}&text=Olá, vi este ${car.name} no site Leo Automóveis e fiquei interessado! Confira o link: ${window.location.origin}${currentUrl}`, '_blank');
             }}
             className="cursor-pointer bg-green-600 w-full text-white flex items-center justify-center gap-3 my-8 h-14 text-xl rounded-lg font-medium"
           >
